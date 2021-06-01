@@ -68,6 +68,9 @@ export default function NavBar(props){
         padding-right: 15px;
         height: 26px;
     }
+    &.nav-short-box-btn-cont :hover{
+        cursor:pointer;
+    }
     &:hover{
         cursor: pointer;
         color: ${theme.colors.Primary['Dark Violet']}

@@ -8,9 +8,10 @@ function Button(props){
   border-radius: 3px;   
   color: white;
   width: 100%;
-  height: 2em;
+  height: 100%;
   font-family: ${theme.typography.Fonts.Family};
   font-weight: ${theme.typography.Fonts.Weights[1]};
+  border-width: 0px;
   border-radius: ${props=>props.borderRadius};
   ${props =>
     props.light &&

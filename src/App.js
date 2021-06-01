@@ -4,11 +4,14 @@ import theme from './theme'
 import Button from './Components/ThemedComponents/Button'
 import NavBar from './Components/Navigation/NavBar'
 import NavModal from './Components/Navigation/NavModal'
+import Cover from './Components/Cover/Cover'
+import Footer from './Components/Footer/Footer'
 function App() {
   const Box = styled.div`
   text-align: center;
   font-family: ${theme.typography.Fonts.Family};
   font-weight: ${theme.typography.Fonts.Weights[1]};
+  overflow-x: hidden;
   `
   const Header = styled.header`
   background-color:white;
@@ -29,6 +32,7 @@ function App() {
       <Header>
         <NavBar showModal={()=>setShowNavModal(!showNavModal)}></NavBar>
         {showNavModal?<NavModal showModal={()=>setShowNavModal(!showNavModal)}></NavModal>:null}
+        <Cover></Cover>
         <Box style={{width: '35%',maxWidth: '130px'}}>
         <Button dark >Copied</Button>
         </Box>
@@ -49,6 +53,7 @@ function App() {
         </a>
       </Header>
     </Box>
+    <Footer></Footer>
     </ThemeProvider>
   );
 }
