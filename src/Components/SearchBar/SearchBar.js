@@ -120,7 +120,7 @@ export default function Cover(props){
                     </Box>
                     <Box width="30%" height={window.innerWidth>375?"100%":(props.error?"74px":"120px")} className="sb-box-5">
                         <Box width="80%" height="40%" className="sb-box-6">
-                            <Button onClick light borderRadius="8px" click={props.searchLink}>Shorten it!</Button>
+                            <Button light borderRadius="8px" click={props.searchLink} disabled={props.btnText==="Fetching.."}>{props.btnText}</Button>
                         </Box>
                     </Box>
                 </Box>

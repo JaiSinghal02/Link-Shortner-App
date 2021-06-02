@@ -25,15 +25,24 @@ ${props =>
 &:hover{
   cursor:pointer;
 }
+${props =>
+  props.disabled===true &&
+  css`
+  background: #8ea8a8;
+  &:hover{
+    cursor:inherit;
+  }
+  `};
+
 `
 function Button(props){
-  
 return(
         <ButtonBox 
             light={props.light} 
             dark={props.dark} 
             borderRadius={props.borderRadius}
-            onClick={props.click}>
+            onClick={props.click}
+            disabled={props.disabled}>
                 {props.children}
         </ButtonBox>
 )

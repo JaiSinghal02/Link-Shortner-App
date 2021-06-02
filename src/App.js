@@ -38,6 +38,8 @@ function App(props) {
   const [data,setData]=useState([])
   const [error,setError]=useState("")
   const [copyTag,setCopyTag]=useState([])
+  const [searchButtonText,setSearchButtonText] = useState("Shorten it!");
+
   function setSearchLink(e){
     e.preventDefault();
     if(error){
@@ -48,13 +50,17 @@ function App(props) {
   function searchLink (e){
     if(link===""){
       setError("Please add a link")
+      return;
     }
+    setSearchButtonText("Fetching..");
     axios.get(`https://api.shrtco.de/v2/shorten?url=${link}`)
       .then((res)=>{
         setCopyTag(prev=>([...prev,"Copy"]))
         setData(prev=>([...prev,res.data.result]))
+        setSearchButtonText("Shorten it!");
       })
       .catch((err)=>{
+        setSearchButtonText("Shorten it!");
         console.log(err.response.data.error)
       })
   }
@@ -76,7 +82,7 @@ function App(props) {
         <NavBar showModal={()=>setShowNavModal(!showNavModal)}></NavBar>
         {showNavModal?<NavModal showModal={()=>setShowNavModal(!showNavModal)}></NavModal>:null}
         <Cover></Cover>
-        <SearchBar setSearchLink={setSearchLink} searchLink={searchLink} value={link} error={error}></SearchBar>
+        <SearchBar setSearchLink={setSearchLink} searchLink={searchLink} btnText={searchButtonText} value={link} error={error}></SearchBar>
         {data.length>0?data.reverse().map((d,i)=>{
         return(
           <LinkBar data={d} key={i} copyToClipboard={(text)=>copyToClipboard(i,text)} copyTag={copyTag[i]}></LinkBar>

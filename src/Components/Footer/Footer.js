@@ -71,6 +71,7 @@ const mbBreak = `@media(max-width:${theme.breakpoints[0]})`;
     }
     ${mbBreak}{
         padding-bottom: 10px;
+        align-items: center;
     }
     `
     const BoxElements=styled.div`
