@@ -3,15 +3,13 @@ import theme from '../../theme'
 import styled from 'styled-components'
 import Button from '../ThemedComponents/Button'
 
-
-export default function Cover(props){
-    const mbBreak = `@media(max-width:${theme.breakpoints[0]})`;
+const mbBreak = `@media(max-width:${theme.breakpoints[0]})`;
     const Container=styled.div`
     display: flex;
     justify-content: flex-end;
     margin-top: 100px;
     width: 100%;
-    height: 450px;
+    min-height: 450px;
     `
     const Box = styled.div`
     display: flex;
@@ -23,7 +21,7 @@ export default function Cover(props){
     }
     ${mbBreak}{
         flex-direction: column-reverse;
-        margin-left: 10px;
+        margin-left: 0px;
     }
     `
     const ElementBox=styled.div`
@@ -46,9 +44,6 @@ export default function Cover(props){
         height: 40px;
         font-size: 14px;
     }
-    &.cov-btn-cont :hover{
-        cursor: pointer;
-    }
     ${`@media(max-width: 580px)`}{
         &.cov-box-1{
             margin-right:10px;
@@ -60,11 +55,12 @@ export default function Cover(props){
     ${mbBreak}{
         &.cov-box-1{
             width:100%;
-            height: 200px;
+            min-height: 200px;
+            padding-left: 0;
         }
         &.cov-box-2{
             width: 100%;
-            margin-left: 0px;
+            margin-left: 12px;
         }  
         &.cov-tag-box{
             align-items:center;
@@ -75,6 +71,7 @@ export default function Cover(props){
         }
         &.cov-taghead-cont{
             width: 90%;
+            align-items: center;
         }
         &.cov-tagline-cont{
             width:69%;
@@ -112,6 +109,8 @@ export default function Cover(props){
         height: 250px;   
     }
     `
+export default function Cover(props){
+    
     return(
         <Container>
             <Box>
@@ -125,7 +124,7 @@ export default function Cover(props){
                         </ElementBox>
                     </ElementBox>
                     <ElementBox className="cov-btn-box">
-                        <ElementBox className="cov-btn-cont"><Button light borderRadius="15px">Get Started</Button></ElementBox>
+                        <ElementBox className="cov-btn-cont"><Button light borderRadius="18px">Get Started</Button></ElementBox>
                     </ElementBox>
                 </ElementBox>
                 

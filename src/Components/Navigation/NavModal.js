@@ -4,9 +4,7 @@ import styled from 'styled-components'
 import Button from '../ThemedComponents/Button'
 // import logo from './assets/images'
 
-
-export default function NavModal(props){
-    const Container=styled.div`
+const Container=styled.div`
     position:absolute;
     z-index: 10;
     top: 100px;
@@ -50,6 +48,8 @@ export default function NavModal(props){
     height: 0.5px;
     background-color: ${theme.colors.Neutral.Gray};
     `
+export default function NavModal(props){
+    
     const node=React.createRef();
     useEffect(()=>{
         document.addEventListener('mousedown',handleClick,false)

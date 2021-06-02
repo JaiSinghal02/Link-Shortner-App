@@ -3,9 +3,7 @@ import theme from '../../theme'
 import styled from 'styled-components'
 import Button from '../ThemedComponents/Button'
 
-
-export default function Cover(props){
-    const mbBreak = `@media(max-width:${theme.breakpoints[0]})`;
+const mbBreak = `@media(max-width:${theme.breakpoints[0]})`;
     const Container=styled.div`
     display: flex;
     justify-content: space-between;
@@ -147,6 +145,8 @@ export default function Cover(props){
         padding: 0 15px;
     }
     `
+export default function Cover(props){
+    
     const Features= ["Link Shortening","Branded Links","Analytics"]
     const Resources= ["Blog","Developer","Support"]
     const Company= ["About","Our Team","Careers","Contact"]

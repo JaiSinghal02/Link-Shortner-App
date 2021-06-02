@@ -3,8 +3,7 @@ import theme from '../../theme'
 import styled from 'styled-components'
 import Button from '../ThemedComponents/Button'
 
-export default function NavBar(props){
-    const mbBreak = `@media(max-width:${theme.breakpoints[0]})`;
+const mbBreak = `@media(max-width:${theme.breakpoints[0]})`;
     const Container=styled.div`
     width: 100%;
     position: absolute;
@@ -104,6 +103,8 @@ export default function NavBar(props){
         cursor: pointer;
     }
     `
+export default function NavBar(props){
+    
     return(
         <Container>
             <Box>
